@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://sunjk21.github.io//favicon.ico?v=1601110444136">
+<link rel="shortcut icon" href="https://sunjk21.github.io//favicon.ico?v=1601110903190">
 <link rel="stylesheet" href="https://sunjk21.github.io//styles/main.css">
 
 
@@ -25,9 +25,14 @@
 
 
     <meta name="description" content="
-仅用于个人学习目的，在测试中需要用到文本分类数据集，图方便直接使用了 sklearn 包中的 newsgroups dataset [1]，因此本文简要探索文本分类数据集--20newsgroups.
+
+table {
+margin: auto;
+}
+
+本文简单探索sklearn 包中的 newsgroups dataset [1]文本分类数据集，以便后续使用。
 类别和标签对应关系
-from skl..." />
+from sklearn.datasets impor..." />
     <meta name="keywords" content="Python,dataset,Text classification,Code" />
   </head>
   <body>
@@ -37,7 +42,7 @@ from skl..." />
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://sunjk21.github.io/">
-        <img src="https://sunjk21.github.io//images/avatar.png?v=1601110444136" class="site-logo">
+        <img src="https://sunjk21.github.io//images/avatar.png?v=1601110903190" class="site-logo">
         <h1 class="site-title">Sunjk21</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -107,7 +112,12 @@ from skl..." />
             
             <div class="post-content" v-pre>
               <!-- more -->
-<p>仅用于个人学习目的，在测试中需要用到文本分类数据集，图方便直接使用了 sklearn 包中的 newsgroups dataset [1]，因此本文简要探索文本分类数据集--20newsgroups.</p>
+<style>
+table {
+margin: auto;
+}
+</style>
+<p>本文简单探索sklearn 包中的 newsgroups dataset [1]文本分类数据集，以便后续使用。</p>
 <h2 id="类别和标签对应关系">类别和标签对应关系</h2>
 <pre><code>from sklearn.datasets import fetch_20newsgroups
 data_bunch= fetch_20newsgroups(subset='train')
