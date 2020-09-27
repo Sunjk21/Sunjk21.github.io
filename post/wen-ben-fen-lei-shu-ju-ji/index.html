@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://sunjk21.github.io//favicon.ico?v=1601110903190">
+<link rel="shortcut icon" href="https://sunjk21.github.io//favicon.ico?v=1601196386369">
 <link rel="stylesheet" href="https://sunjk21.github.io//styles/main.css">
 
 
@@ -42,7 +42,7 @@ from sklearn.datasets impor..." />
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://sunjk21.github.io/">
-        <img src="https://sunjk21.github.io//images/avatar.png?v=1601110903190" class="site-logo">
+        <img src="https://sunjk21.github.io//images/avatar.png?v=1601196386369" class="site-logo">
         <h1 class="site-title">Sunjk21</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -216,7 +216,7 @@ targets = data_bunch.target
 </tbody>
 </table>
 <h2 id="数据分布">数据分布</h2>
-<h3 id="训练集同测试集比例">训练集同测试集比例</h3>
+<h3 id="训练集和测试集比例">训练集和测试集比例</h3>
 <center><b><font size="3">表 1 训练集和测试集的比例</font></b></center>
 <table>
 <thead>
@@ -241,6 +241,16 @@ targets = data_bunch.target
 <figure data-type="image" tabindex="1"><img src="https://sunjk21.github.io//post-images/1601108845985.jpg" alt="" loading="lazy"></figure>
 <center><b><font size="3">图 1 训练集和测试集中不同类别的样本占比</font></b></center>
 由图 1可见，训练集和测试集中不同类别的样本比例基本平衡，在模型验证阶段可以排除类别不平衡问题的影响。
+<h3 id="查看数据的格式">查看数据的格式</h3>
+<pre><code>print(fetch_20newsgroups(data_home=&quot;data&quot;, subset=&quot;train&quot;, random_state=42, return_X_y=True)[0][0])
+</code></pre>
+<figure data-type="image" tabindex="2"><img src="https://sunjk21.github.io//post-images/1601185917499.jpg" alt="" loading="lazy"></figure>
+<center><b><font size="3">图 2  查看数据输出格式</font></b></center>
+数据的格式如图 2可见，但是我更需要的是模型只从正文中学得数据模式，因此只保留正文文本，此过程可通过自带参数实现，获得的数据格式如图 3所示。
+<pre><code>print(fetch_20newsgroups(data_home=&quot;data&quot;, subset=&quot;train&quot;, random_state=42,   remove=('headers', 'footers', 'quotes'), return_X_y=True)[0][0])
+</code></pre>
+<figure data-type="image" tabindex="3"><img src="https://sunjk21.github.io//post-images/1601186506732.jpg" alt="" loading="lazy"></figure>
+<center><b><font size="3">图 3  查看数据输出格式</font></b></center>
 <h2 id="注意事项">注意事项</h2>
 <ol>
 <li><code>fetch_20newsgroups</code> 函数的参数 <code>subset</code> 如果不指定，默认值为 <code>&quot;train&quot;</code>。</li>
